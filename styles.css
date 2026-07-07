@@ -1,5 +1,5 @@
 /* ==========================================================================
-   FRANCISCO PORTFOLIO — ALTERNATE DESIGN: "OPS WALL"
+   SEKINAH PORTFOLIO — ALTERNATE DESIGN: "OPS WALL"
    Direction: instead of borrowing the terminal/CLI vocabulary (v1), this
    pass borrows from the physical SOC monitoring wall — the bank of screens
    analysts actually watch: condensed industrial type (signage), a radar
@@ -152,52 +152,21 @@ h2{ font-size: clamp(1.9rem, 3.4vw, 2.6rem); }
 .btn-ghost{ border-color: var(--border-bright); color: var(--text); }
 .btn-ghost:hover{ border-color: var(--blue); color: var(--blue); }
 
-/* Radar / photo panel — signature element */
-.radar-panel{
-  position:relative;
-  aspect-ratio:1/1;
-  border-radius:50%;
-  border:1px solid var(--border-bright);
-  background: radial-gradient(circle, var(--elevated) 0%, var(--surface) 70%, var(--bg) 100%);
-  display:flex; align-items:center; justify-content:center;
-  overflow:hidden;
+/* Profile Photo */
+.profile-photo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.radar-panel::before{
-  content:"";
-  position:absolute; inset:0;
-  background: repeating-radial-gradient(circle, transparent 0 13%, rgba(79,159,232,0.06) 13% 13.5%);
-}
-.radar-sweep{
-  position:absolute; inset:0;
-  background: conic-gradient(from 0deg, rgba(79,159,232,0.35), transparent 28%);
-  animation: sweep 4s linear infinite;
-  border-radius:50%;
-}
-@keyframes sweep{ to{ transform: rotate(360deg); } }
-.radar-photo{
-  position:relative; z-index:2;
-  width:64%; aspect-ratio:1/1; border-radius:50%;
-  overflow:hidden; border:3px solid var(--bg);
-  box-shadow: 0 0 0 1px var(--border-bright), 0 20px 50px rgba(0,0,0,0.5);
-}
-.radar-photo img{ width:100%; height:100%; object-fit:cover; }
 
-.field-note{
-  position:absolute; bottom:6%; right:-4%; z-index:3;
-  width:220px;
-  background: var(--elevated-hi);
-  border:1px solid var(--border-bright);
-  border-radius: var(--radius-md);
-  padding:0.9rem 1rem;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+.profile-photo img{
+  width: 320px;
+  max-width: 100%;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
 }
-@media (max-width:940px){ .field-note{ right:2%; width:70%; } }
-.field-note .tag{ font-family: var(--font-mono); font-size:0.65rem; letter-spacing:0.08em; color: var(--red); text-transform:uppercase; margin-bottom:0.4em; display:block; }
-.field-note p{ font-style:italic; font-size:0.8rem; color: var(--muted); margin:0; }
-
-.frame-caption{ text-align:center; font-family: var(--font-mono); font-size:0.7rem; color: var(--faint); margin-top:1.2rem; text-transform:uppercase; letter-spacing:0.08em; }
-.frame-caption .hi{ color: var(--amber); }
-
 /* --- Live status grid ------------------------------------------------------*/
 section{ padding: 3.2rem 0; }
 .status-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.1rem; }
